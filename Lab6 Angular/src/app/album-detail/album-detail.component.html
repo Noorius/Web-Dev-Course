@@ -1,0 +1,13 @@
+<div *ngIf="album">
+  <h2>{{detail_title}}</h2>
+  <h4>User#: {{album.userId}}</h4>
+
+  <form (ngSubmit)="onSubmit()">
+    <input type="text">
+    <button class="button" type="submit">Save</button>
+  </form>
+
+</div>
+
+
+
