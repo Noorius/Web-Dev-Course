@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if vacancy %}
+        <h1>{{ vacancy.name }}</h1>
+        <p>{{ vacancy.description }}</p>
+        <h2>{{ vacancy.salary }}</h2>
+
+    {% else %}
+        <p>Nothing is available.</p>
+    {% endif %}
+</body>
+</html>

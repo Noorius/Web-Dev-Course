@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if company %}
+        <h1>{{ company.name }}</h1>
+        <p>{{ company.description }}</p>
+        <h2>{{ company.city }}</h2>
+        <h3>{{ company.address }}</h3>
+
+        <a href="{% url 'api:get_vacancies' company.id %}">See available vacancies</a>
+    {% else %}
+        <p>Nothing is available.</p>
+    {% endif %}
+</body>
+</html>
