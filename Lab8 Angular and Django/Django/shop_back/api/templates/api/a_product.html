@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if product.is_active %}
+        <h1>{{product.name}}</h1>
+        <h2>{{product.price}}</h2>
+        <p>{{product.description}}</p>
+        <h3>{{product.count}}</h3>
+    {% else %}
+        <p>No product is not active now</p>
+    {% endif %}
+</body>
+</html>
