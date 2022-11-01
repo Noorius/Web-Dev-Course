@@ -1,0 +1,25 @@
+<ng-container *ngFor="let product of products">
+  <div *ngIf="SelectedCategory.indexOf(product.category, 0)!=-1" class="divs">
+    <h3>
+      <a [title]="product.name + ' detail'"
+          [routerLink]="['/products', product.id]">
+      {{ product.name }}
+      </a> 
+      <a (click)=(delete(product)) class="cross">X</a>
+    </h3>
+
+    <p *ngIf = "product.description">
+      Description: {{product.description}}
+    </p>
+
+    <p>
+      Category: {{product.category}}
+    </p>
+
+      <a #lik class='emotions' (click)="react(product, $event, lik, dis)">👍</a>
+      <span>{{product.likes}}</span>
+      <a #dis class='emotions' (click)="react(product, $event, lik, dis)">👎</a> 
+
+  </div>
+</ng-container>
+

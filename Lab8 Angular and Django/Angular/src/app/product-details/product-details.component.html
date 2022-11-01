@@ -1,0 +1,24 @@
+<h2>Product Details</h2>
+<div *ngIf="product" class="main_div">
+  <h3>{{ product.name }}</h3>
+  <img src={{product.image1}} id="main_img" class="imag">
+  <p *ngIf = "product.description"> {{ product.description }} </p>
+  
+  <p> Rating: {{product.rating}}</p>
+  <div #ratings>
+    <button (click)="rate(product, ratings, 1)">1</button>
+    <button (click)="rate(product, ratings, 2)">2</button>
+    <button (click)="rate(product, ratings, 3)">3</button>
+    <button (click)="rate(product, ratings, 4)">4</button>
+    <button (click)="rate(product, ratings, 5)">5</button>
+  </div>
+  <h4>{{ product.price | currency }}</h4>
+  <button type="button" (click)="addToCart(product)">Add to cart</button>
+  <p>
+    <a href={{product.url}} target="_blank">See on Amazon...</a>
+  </p>
+  <div class="gall">
+    <img src={{product.image2}} class="imag">
+    <img src={{product.image3}} class="imag">
+  </div>
+</div>
